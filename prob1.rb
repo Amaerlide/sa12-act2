@@ -5,7 +5,7 @@ user = 'Amaerlide'
 response = HTTParty.get("https://api.github.com/users/#{user}/repos")
 
 if response.success?
-  repos = response.parsed_response
+  repos = response
 
   highest_star = repos.max_by {|repo| repo['stargazers_count']}
 
